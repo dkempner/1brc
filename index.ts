@@ -12,7 +12,7 @@ function readFile(fn: (line: string) => void): Promise<void> {
     highWaterMark,
   });
 
-  let leftover = ""; // Store any partial line from the previous chunk
+  let leftover = "";
 
   readableStream.on("data", (chunk) => {
     let data = leftover + chunk;
